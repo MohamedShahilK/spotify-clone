@@ -1,0 +1,11 @@
+1) React.ReactNode : ReactNode is a type that represents a React element, an array of React elements, or a string, number, or boolean. It is defined in the react module and can be used to specify the type of a variable that can hold any of these types.
+
+2) React.FC : FC is type like other types with fullform "FuctionalComponent"
+
+
+
+Important Notes
+-------------------------
+ 1. Page Priority : layout.tsx > page.tsx > other pages
+ 2. In layout.tsx, we build layout for the website and passing remaining parts as children into layout Design (For Example; here we passing children into Sidebar).
+ 3. In page.tsx, in which contains remaining parts details. Also we can create number of pages with different names (instead of page.tsx)

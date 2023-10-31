@@ -1,0 +1,12 @@
+1. Installation
+-------------------
+
+-> $ npx create-next-app@latest spotify-clone
+-> TypeScript - Y, ESLint - Y, Talwind CSS - Y, 'src'/directory - Y, App Router - Y, import alias - Y
+
+2. Structuring
+------------------------
+-> layout.tsx is the main file
+-> remove contents inside of extend section in tailwind.config.ts
+-> Create a folder name "site" inside of app folder with parenthesis "(site)",parenthesis is for not to create another route. Then put "page.tsx" file inside of folder named "(site)" from app folder
+
