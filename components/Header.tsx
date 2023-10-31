@@ -26,11 +26,11 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
                 {/* For Devices With or greater than Medium Size*/}
                 <div className="hidden md:flex gap-x-2 items-center">
 
-                    <button onClick={() => router.back()} className="rounded-full bg-black flex items-center justify-center hover:opacity-75 transition">
+                    <button onClick={() => router.back()} className="rounded-full bg-black flex items-center justify-center hover:opacity-25 transition">
                         <RxCaretLeft size={35} />
                     </button>
 
-                    <button onClick={() => router.forward()} className="rounded-full bg-black flex items-center justify-center hover:opacity-75 transition">
+                    <button onClick={() => router.forward()} className="rounded-full bg-black flex items-center justify-center hover:opacity-25 transition">
                         <RxCaretRight size={35} />
                     </button>
 
