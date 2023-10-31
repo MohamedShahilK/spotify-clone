@@ -9,3 +9,15 @@ Important Notes
  1. Page Priority : layout.tsx > page.tsx > other pages
  2. In layout.tsx, we build layout for the website and passing remaining parts as children into layout Design (For Example; here we passing children into Sidebar).
  3. In page.tsx, in which contains remaining parts details. Also we can create number of pages with different names (instead of page.tsx)
+
+
+
+
+
+
+Important
+---------------
+For generating types in supabase
+    npm i supabase@">=1.8.1" --save-dev
+    npx supabase login
+    npx supabase gen types typescript --project-id rubfznymmogrsvlilong --schema public > types_db.ts (rubfznymmogrsvlilong -- reference id)
