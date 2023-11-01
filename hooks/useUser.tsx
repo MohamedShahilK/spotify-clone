@@ -16,6 +16,9 @@ export const UserContext = createContext<UserContextType | undefined>(  // UserC
 );
 
 // Creating General Props
+// interface Props: This declares an interface named Props
+// [propName: string]: any: This part of the interface is defining an index signature that allows you to have properties with string keys (property names) of any type (any). 
+// The propName is a placeholder for the actual property name. This means you can pass any props with string names to the component that implements this interface, and their values can be of any type.
 export interface Props {
     [propName: string]: any
 }
