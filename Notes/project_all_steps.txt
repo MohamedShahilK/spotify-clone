@@ -10,3 +10,9 @@
 -> remove contents inside of extend section in tailwind.config.ts
 -> Create a folder name "site" inside of app folder with parenthesis "(site)",parenthesis is for not to create another route. Then put "page.tsx" file inside of folder named "(site)" from app folder
 
+3. "type.ts" created by myself, to store some object required for spotify songs & other related data and for authetication & user details
+
+4. "hooks" folder also created by myself
+
+    a) "useUser.tsx" is a hook created for tracking current user details
+    
