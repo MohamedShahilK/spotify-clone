@@ -3,3 +3,4 @@
 3. @supabase/auth-helpers-nextjs
 4. @supabase/auth-helpers-react
 5. stripe
+6. @radix-ui/react-dialog   //For modals

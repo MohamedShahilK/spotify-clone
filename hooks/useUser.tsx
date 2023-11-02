@@ -3,7 +3,9 @@ import { User } from '@supabase/auth-helpers-nextjs'
 import { useSessionContext, useUser as useSupaUser } from '@supabase/auth-helpers-react'
 import { createContext, useContext, useEffect, useState } from 'react';
 
-type UserContextType = {
+// When you create a context with this type, you should provide a value that matches the expected structure defined in UserContextType. This allows other components in your application to consume 
+// the user context with confidence that it contains these specific properties.
+type UserContextType = {    // Like a model
     accessToken: string | null;
     user: User | null;
     userDetails: UserDetails | null;
@@ -26,6 +28,8 @@ export interface Props {
 // Here we extract couple of things from SessionContextProvider(in SuperbaseProvider.tsx), because we wrapped the application with "SupabaseProvider" in layout.tsx file
 export const MyUserContextProvider = (props: Props) => {
 
+    // useSessionContext() is a hook that returns an object that likely contains properties related to user sessions, such as session, isLoading, and supabaseClient.
+
     // the items we are going to extract related to userSession
     const {
         session,
@@ -45,7 +49,13 @@ export const MyUserContextProvider = (props: Props) => {
     const [userDetails, setUserDetails] = useState<UserDetails | null>(null)
     const [subscription, setSubscription] = useState<Subscription | null>(null)
 
+    // .from('users') specifies that you want to perform the query on the "users" table in your database.
+    // .select('*') specifies that you want to select all columns from the "users" table. You can replace '*' with an array of specific column names if you only want to select certain columns.
+    // .single() is used to execute the query and retrieve a single record from the "users" table. If there are multiple records that match the query, .single() will return the first record. If no records match, it will return null.
     const getUserDetails = () => superbase.from('users').select('*').single();
+
+    // .select('*, prices(*, products(*))') This means you want to include related data from the "prices" and "products" tables for each subscription.
+    // .in('status', ['trailing', 'active']) specifies a filter condition. It retrieves records where the "status" column matches one of the values in the array ['trailing', 'active'].
     const getSubscription = () => superbase.from('subscriptions').select('*, prices(*, products(*))').in('status', ['trailing', 'active']).single();
 
     // For patch this get informations and assign into corressponding dispatch functions. Also for loading all data if user is logged, otherwise clear all data
@@ -90,6 +100,9 @@ export const MyUserContextProvider = (props: Props) => {
         subscription,
     }
 
+    // UserContext.Provider: This is a context provider component that allows you to provide a value to the context and make it accessible to any child components that consume this context.
+    // value={value}: The value prop is used to provide the value that you want to make available in the context. This value can be any data or functions that you want to share with child components.
+    // {...props}: The spread operator is used to pass any additional props that might have been passed to the UserContext.Provider component when it is used. This allows you to pass through any other props that the UserContext.Provider component might accept.
     return <UserContext.Provider value={value} {...props} />
 }
 

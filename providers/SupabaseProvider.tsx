@@ -11,11 +11,26 @@ interface SupabaseProviderProps {
 
 const SupabaseProvider: React.FC<SupabaseProviderProps> = ({ children }) => {
 
+    // createClientComponentClient : To create superbase client
+
     // superbaseClient is just a variable to hold the SupabaseClient
     // Here we didn't using dispatch method, just holding the state
     const [supabaseClient] = useState(() => createClientComponentClient<Database>())
 
     return (
+        // <SessionContextProvider> : This is a custom or third-party React component, which is used to provide a context for its children. Context in React is a way to share data between components without having to pass props through every level of the component tree.
+
+        // supabaseClient={supabaseClient}: It looks like the SessionContextProvider component is being provided with a supabaseClient prop, which is presumably a Supabase client. Supabase is a service for building applications with PostgreSQL databases. 
+        //                                  In this context, it's likely that the Supabase client is being used to manage user sessions and authentication.
+
+        // Important
+        // ----------
+        // 1. The purpose of this code is to set up a context for its child components to access the supabaseClient or other data and functions related to user sessions and authentication, which can be 
+        //    used throughout the component tree without explicitly passing supabaseClient as a prop to each component.
+
+        // 2. To use this code, you would typically include it in your React component hierarchy to provide access to the supabaseClient and related session data to your application's components. It's part 
+        //    of the overall state management and data sharing strategy in your application.
+
         <SessionContextProvider supabaseClient={supabaseClient}>
             {children}
         </SessionContextProvider>

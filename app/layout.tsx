@@ -4,6 +4,7 @@ import './globals.css'
 import Sidebar from '@/components/Sidebar'
 import SupabaseProvider from '@/providers/SupabaseProvider'
 import UserProvider from '@/providers/UserProvider'
+import ModalProvider from '@/providers/ModalProviders'
 
 const font = Figtree({ subsets: ['latin'] })
 
@@ -24,6 +25,9 @@ export default function RootLayout({
         <SupabaseProvider>
 
           <UserProvider>
+
+            {/* it is self-closing tab, it doesn't need to wrap any children inside of it. */}
+            <ModalProvider />
 
             <Sidebar>
               {children}
