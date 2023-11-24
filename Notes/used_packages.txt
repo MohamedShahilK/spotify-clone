@@ -5,3 +5,5 @@
 5. stripe
 6. @radix-ui/react-dialog   //For modals
 7. zustand  // A small, fast and scalable state-management solution using simplified flux principles.
+8. @supabase/auth-ui-react
+9. @supabase/auth-ui-shared

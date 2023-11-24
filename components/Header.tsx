@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx'
 import { HiHome } from 'react-icons/hi'
 import { BiSearch } from 'react-icons/bi'
-import CustomButton from "./CustomButton";
+import CustomButton from "./Reusable/CustomButton";
 
 interface HeaderProps {
     children: React.ReactNode,

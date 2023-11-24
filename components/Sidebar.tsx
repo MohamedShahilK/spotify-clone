@@ -5,8 +5,8 @@ import { useMemo } from "react";
 
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
-import Box from "./Box";
-import SidebarItem from "./SIdebarItem";
+import Box from "./Reusable/Box";
+import SidebarItem from "./Reusable/SIdebarItem";
 import Library from "./Library";
 
 interface SidebarProps {
