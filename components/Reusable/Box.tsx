@@ -2,7 +2,7 @@ import React from "react";
 import { twMerge } from "tailwind-merge";
 
 interface BoxProps {
-    children: React.ReactNode,
+    children: React.ReactNode, // children of <box> children </box>
     className?: string,
 }
 

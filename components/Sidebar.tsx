@@ -23,6 +23,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
     // first - empty array , second - dependency array
     // hook for memoization as caching a value so that it does not need to be recalculated.
     // The useMemo Hook only runs when one of its dependencies update.
+    // In useMemo, once we create the variables of a object, it will memorize it.
     const routes = useMemo(() => [
         {
             icon: HiHome,
@@ -33,8 +34,8 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
         {
             icon: BiSearch,
             label: 'Search',
-            active: pathname === 'Search',
-            href: '/search'
+            active: pathname === '/search',
+            href: '/search',
         }
     ], [pathname])
 
