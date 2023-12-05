@@ -6,6 +6,7 @@ import { RxCaretLeft, RxCaretRight } from 'react-icons/rx'
 import { HiHome } from 'react-icons/hi'
 import { BiSearch } from 'react-icons/bi'
 import CustomButton from "./Reusable/CustomButton";
+import useAuthModal from "@/hooks/useAuthModal";
 
 interface HeaderProps {
     children: React.ReactNode,
@@ -18,6 +19,8 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
     const router = useRouter();
 
     const handleLogout = () => { }
+
+    const authModel = useAuthModal();
 
     return (
         <div className={twMerge(`h-fit bg-gradient-to-b from-emerald-800 p-6`, className)}>
@@ -57,13 +60,14 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
 
                     <>
                         <div>
-                            <CustomButton className="bg-transparent text-neutral-300 font-medium" onClick={() => { }}>
+                            {/* <CustomButton className="bg-transparent text-neutral-300 font-medium" onClick={() => { }}> */}
+                            <CustomButton className="bg-transparent text-neutral-300 font-medium" onClick={authModel.onOpen}>
                                 SignUp
                             </CustomButton>
                         </div>
 
                         <div>
-                            <CustomButton className="bg-white px-6 py-2" onClick={() => { }}>
+                            <CustomButton className="bg-white px-6 py-2" onClick={authModel.onOpen}>
                                 Log in
                             </CustomButton>
                         </div>
